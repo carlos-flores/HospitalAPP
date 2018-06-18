@@ -1,0 +1,6 @@
+<h2>{{leyenda}}</h2>
+<div class="input-group">
+    <span class="input-group-addon" id="btmPlus" (click)="incrementar();" min="0" max="100"><i class="mdi mdi-plus"></i></span>
+    <input #txtProgress type="text" class="form-control" [(ngModel)]="avance" (ngModelChange)="onChanges($event)">
+    <span class="input-group-addon" id="btnMinus" (click)="decrementar();"><i class="mdi mdi-minus"></i></span>
+</div>
