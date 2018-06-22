@@ -10,6 +10,8 @@ import { IncrementadorComponent } from '../reutilizables/incrementador/increment
 import { GraficaDonaComponent } from '../reutilizables/grafica-dona/grafica-dona.component';
 import { ChartsModule } from 'ng2-charts';
 import { AcountSettingComponent } from './acount-setting/acount-setting.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +21,9 @@ import { AcountSettingComponent } from './acount-setting/acount-setting.componen
         Graficas1Component,
         IncrementadorComponent,
         GraficaDonaComponent,
-        AcountSettingComponent
+        AcountSettingComponent,
+        PromesasComponent,
+        RxjsComponent
       ],
       exports: [
         PagesComponent,
