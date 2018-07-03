@@ -21,7 +21,7 @@ export class PromesasComponent implements OnInit {
   }
 
   contar3(): Promise<boolean>{
-    return new Promise((resolve,reject){
+    return new Promise((resolve,reject)=>{
       let contador = 0;
       let intervalo = setInterval(()=>{
         contador += 1;

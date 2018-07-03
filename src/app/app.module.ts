@@ -12,7 +12,7 @@ import { PagesModule } from './pages/pages.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 // SERVCIOS
@@ -29,6 +29,7 @@ import { ServiceModule } from './services/service.module';
     BrowserModule,
     PagesModule,
     FormsModule,
+    ReactiveFormsModule,
     ServiceModule,
     APP_ROUTES
   ],

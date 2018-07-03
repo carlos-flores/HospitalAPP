@@ -23,7 +23,7 @@ export class BreadcrumbsComponent implements OnInit {
 
         const metaTag: MetaDefinition = {
           name:'description',
-          content:this.paginaActual.description;
+          content:this.paginaActual.description
         }
         
         meta.updateTag(metaTag);
