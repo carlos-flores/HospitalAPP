@@ -7,7 +7,6 @@ import { APP_ROUTES } from './app.routes';
 // MODULOS
 import { PagesModule } from './pages/pages.module';
 
-
 // COMPONENTES PROPIOS
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -17,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // SERVCIOS
 import { ServiceModule } from './services/service.module';
+
+
 
 
 @NgModule({

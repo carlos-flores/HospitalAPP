@@ -1,4 +1,4 @@
-import { SettingsService, SideBarService, SharedService, UsuarioService, LoginGuardGuard } from './service.index';
+import { SettingsService, SideBarService, SharedService, UsuarioService, LoginGuardGuard, SubirArchivosService } from './service.index';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +15,8 @@ SharedService
     SideBarService, 
     SharedService, 
     UsuarioService,
-    LoginGuardGuard 
+    LoginGuardGuard,
+    SubirArchivosService 
   ],
   declarations: []
 })

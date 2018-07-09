@@ -1,0 +1,150 @@
+<div class="row animated fadeIn">
+    <div class="col-lg-7">
+        <div class="card">
+
+            <div class="card-body">
+
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="actualizar(f)" action="#">
+                    <div class="form-body">
+                        <h3 class="card-title">Información Personal</h3>
+                        <hr>
+                        <div class="row p-t-20">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Nombre(s)</label>
+                                    <input [ngModel]="usuario.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del Usuario" required>
+                                    <small class="form-control-feedback"> El nombre es obligatorio </small> </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group has-danger">
+                                    <label class="control-label">Apellidos</label>
+                                    <input [ngModel]="usuario.apellidos" name="apellidos" type="text" class="form-control form-control-danger" placeholder="Apellidos del usuario" required>
+                                    <small class="form-control-feedback"> Los apellidos son obligatorios </small> </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <div class="row p-t-20">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Email</label>
+                                    <input [ngModel]="usuario.email" [disabled]="usuario.google" name="email" type="email" class="form-control" placeholder="Correo del usuario" required>
+                                    <small class="form-control-feedback"> El correo es obligatorio</small> </div>
+                            </div>
+
+                        </div>
+                        <!--/row-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group has-success">
+                                    <label class="control-label">Sexo</label>
+                                    <select class="form-control custom-select">
+                                      <option value="">Masculino</option>
+                                      <option value="">Femenino</option>
+                                  </select>
+                                    <small class="form-control-feedback"> Selecciona tu sexo </small> </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Fecha de nacimiento</label>
+                                    <input type="date" class="form-control" placeholder="dd/mm/yyyy">
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->
+
+                        <h3 class="box-title m-t-40">Dirección</h3>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="form-group">
+                                    <label>Calle</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Ciudad</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Estado</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Código postal</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>País</label>
+                                    <select class="form-control custom-select">
+                                      <option>--Selecciona tu país--</option>
+                                      <option>India</option>
+                                      <option>Sri Lanka</option>
+                                      <option>USA</option>
+                                  </select>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Actualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <div class="card">
+
+            <div class="card-body" align="center">
+                <form action="#">
+                    <div class="form-body">
+                        <h3 class="card-title">Foto de perfíl</h3>
+                        <hr>
+                        <div class="row p-t-20 text-center">
+                            <div class="col-md-12">
+                                <img *ngIf="!imagenTemporal" src="{{usuarioService.usuario.img|imagen}}" alt="user" class="profile-pic w150" />
+                                <img *ngIf="imagenTemporal" [src]="imagenTemporal" alt="user" class="profile-pic w150" />
+
+
+                            </div>
+                        </div>
+                        <div class="row p-t-20">
+                            <div class="col-md-12">
+
+                                <input type="file" (change)="seleccionImagen($event.target.files[0])" />
+                            </div>
+
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <br>
+                    <div class="form-actions">
+                        <button (click)="cambiarImagen()" [disabled]="!imagenSubir" type="submit" class="btn btn-block btn-success"> <i class="fa fa-check"></i> Actualizar foto</button>
+                    </div>
+
+                </form>
+                <br>
+
+            </div>
+        </div>
+    </div>
+</div>
