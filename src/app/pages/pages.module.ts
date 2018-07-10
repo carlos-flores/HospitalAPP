@@ -15,6 +15,8 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { PerfilComponent } from './perfil/perfil.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalUploadComponent } from './modal-upload/modal-upload.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +29,9 @@ import { PerfilComponent } from './perfil/perfil.component';
         AcountSettingComponent,
         PromesasComponent,
         RxjsComponent,
-        PerfilComponent
+        PerfilComponent,
+        UsuariosComponent,
+        ModalUploadComponent
       ],
       exports: [
         PagesComponent,

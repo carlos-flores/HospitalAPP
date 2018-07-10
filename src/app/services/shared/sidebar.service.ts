@@ -33,20 +33,20 @@ export class SideBarService {
       ]
     },
     {
-      titulo: 'Principal2',
-      icono: 'mdi mdi-gauge',
+      titulo: 'Mantenimientos',
+      icono: 'mdi mdi-android',
       submenu: [
         {
-          titulo: 'Dashboard',
-          url: '/dashboard'
+          titulo: 'Usuarios',
+          url: '/usuarios'
         },
         {
-          titulo: 'ProgressBar',
-          url: '/progress'
+          titulo: 'Hospitales',
+          url: '/hospitales'
         },
         {
-          titulo: 'Gragicas',
-          url: '/graficas1'
+          titulo: 'Médicos',
+          url: '/medicos'
         }
       ]
     }

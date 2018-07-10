@@ -8,6 +8,7 @@ import { PromesasComponent } from './promesas/promesas.component'
 import { RxjsComponent } from './rxjs/rxjs.component'
 import { LoginGuardGuard } from '../services/service.index';
 import { PerfilComponent } from './perfil/perfil.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 const pagesRoutes: Routes = [
     {
@@ -22,6 +23,7 @@ const pagesRoutes: Routes = [
             { path: 'account-settings', component: AcountSettingComponent, data: { titulo: 'Settings', description: 'Pagina que permite cambiar el color del tema' } },
             { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas', description: 'Pagina que permite utilizar una promesa ' } },
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJS', description: 'Pagina que permite usar observables' } },
+            { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento de Usuarios', description: 'Página que permites gestionar a los usuarios' } },
             { path: '', pathMatch: 'full', redirectTo: '/dashboard' }
         ]
     }

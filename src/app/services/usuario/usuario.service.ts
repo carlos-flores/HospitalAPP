@@ -63,7 +63,10 @@ export class UsuarioService {
 
       console.log(resp);
 
-      this.registrarEnStorage(resp.usuario._id, this.token, resp.usuario);
+      if(resp.usuario._id === this.usuario._id){
+        this.registrarEnStorage(resp.usuario._id, this.token, resp.usuario);
+      }
+      
       swal('Usuario Actualizado', usuario.email, 'success');
       return resp.usuario;
     }));
@@ -121,6 +124,20 @@ export class UsuarioService {
     });
   }
 
+  cargarUsuarios(desde: number, tam: number){
+    let URL = URL_SERVCIOS + "/usuario?desde="+desde+'&tam='+tam;
+    return this.http.get(URL);
+  }
+
+  buscarUsuarios(termino: string){
+    let URL = URL_SERVCIOS + "/busqueda/colleccion/usuario/"+termino;
+    return this.http.get(URL);
+  }
+
+  borrarUsuario(idUsuario: string){
+    let URL = URL_SERVCIOS + "/usuario/"+idUsuario+"?token="+this.token;
+    return this.http.delete(URL);
+  }
 
 }
 
