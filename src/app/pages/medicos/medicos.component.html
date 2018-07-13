@@ -1,0 +1,61 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <input #input (keyup)="buscarMedicos(input.value)" type="text" class="form-control" placeholder="Buscar hospital">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row animated fadeIn" *ngIf="loading">
+    <div class="col-sm-12">
+        <div class="alert alert-warning text-center">
+            <strong>Cargando</strong>
+            <br>
+            <i class="fa fa-refresh fa-spin fa-2x"></i>
+            <br>
+            <span>Espere por favor</span>
+        </div>
+    </div>
+</div>
+<div class="row animated fadeIn" *ngIf="!loading">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-8">
+                        <h3 class="card-title">Medicos registrados (<small>{{totalRegistros}}</small>)</h3>
+                    </div>
+                    <div class="col-4 text-right">
+                        <button (click)="nuevoMedico()" type="button" class="btn waves-effect waves-light btn-rounded btn-outline-primary"><i class="fa fa-plus"></i> Crear Médico</button>
+                    </div>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Médico</th>
+                            <th>Hospital</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let medico of medicos">
+                            <td class="w70 text-center"><img (click)="mostrarModal(medico._id)" [src]="medico.img | imagen:'medicos'" alt="Médico" class="profile-pic w50 img-circle pointer"></td>
+                            <td>{{medico.nombre}}</td>
+                            <td>{{medico.hospital?.nombre}}</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <button (click)="editarMedico(medico)" class="btn btn-primary"><i class="fa fa-edit"></i> </button>
+                                    <button (click)="borrarMedico(medico)" class="btn btn-danger"><i class="fa fa-trash"></i> </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button (click)="cambiarDesde(-5)" class="btn btn-secondary">Anteriores</button>
+                <button (click)="cambiarDesde(5)" class="btn btn-secondary">Siguientes</button>
+            </div>
+        </div>
+    </div>
+</div>
