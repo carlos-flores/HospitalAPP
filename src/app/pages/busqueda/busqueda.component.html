@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Usuarios</h4>
+                <hr>
+                <table class="table table-hover">
+                    <tr *ngFor="let usuario of usuarios" class="text-center pointer" [routerLink]="['/usuarios']">
+                        <td class="w70 text-center"><img [src]="usuario.img | imagen:'medicos'" alt="Médico" class="profile-pic w50 img-circle pointer"></td>
+                        <td>{{usuario.nombre}} {{usuario.apellidos}}</td>
+                    </tr>
+                </table>
+                <div class="alert alert-danger" role="alert" *ngIf="usuarios.length<=0">
+                    No existen usuarios
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Médicos</h4>
+                <hr>
+                <table class="table table-hover">
+                    <tr *ngFor="let medico of medicos" class="text-center pointer" [routerLink]="['/medico',medico._id]">
+                        <td class="w70 text-center"><img [src]="medico.img | imagen:'medicos'" alt="Médico" class="profile-pic w50 img-circle pointer"></td>
+                        <td>{{medico.nombre}} {{medico.apellidos}}</td>
+                    </tr>
+                </table>
+                <div class="alert alert-danger" role="alert" *ngIf="medicos.length<=0">
+                    No existen médicos
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Hospitales</h4>
+                <hr>
+                <table class="table table-hover">
+                    <tr *ngFor="let hospital of hospitales" class="text-center pointer" [routerLink]="['/hospitales']">
+                        <td class="w70 text-center"><img [src]="hospital.img | imagen:'medicos'" alt="Médico" class="profile-pic w50 img-circle pointer"></td>
+                        <td>{{hospital.nombre}}</td>
+                    </tr>
+                </table>
+                <div class="alert alert-danger" role="alert" *ngIf="hospitales.length<=0">
+                    No existen hospitales
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

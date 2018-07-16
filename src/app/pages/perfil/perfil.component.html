@@ -13,14 +13,14 @@
                                 <div class="form-group">
                                     <label class="control-label">Nombre(s)</label>
                                     <input [ngModel]="usuario.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del Usuario" required>
-                                    <small class="form-control-feedback"> El nombre es obligatorio </small> </div>
+                                </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-6">
-                                <div class="form-group has-danger">
+                                <div class="form-group">
                                     <label class="control-label">Apellidos</label>
                                     <input [ngModel]="usuario.apellidos" name="apellidos" type="text" class="form-control form-control-danger" placeholder="Apellidos del usuario" required>
-                                    <small class="form-control-feedback"> Los apellidos son obligatorios </small> </div>
+                                </div>
                             </div>
                             <!--/span-->
                         </div>
@@ -29,7 +29,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Email</label>
                                     <input [ngModel]="usuario.email" [disabled]="usuario.google" name="email" type="email" class="form-control" placeholder="Correo del usuario" required>
-                                    <small class="form-control-feedback"> El correo es obligatorio</small> </div>
+                                </div>
                             </div>
 
                         </div>
@@ -42,7 +42,7 @@
                                       <option value="">Masculino</option>
                                       <option value="">Femenino</option>
                                   </select>
-                                    <small class="form-control-feedback"> Selecciona tu sexo </small> </div>
+                                </div>
                             </div>
                             <!--/span-->
                             <div class="col-md-6">
