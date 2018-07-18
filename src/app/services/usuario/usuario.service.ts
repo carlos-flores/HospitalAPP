@@ -26,6 +26,20 @@ export class UsuarioService {
     this.cargarDesdeStorage();
   }
 
+  renovarTOKEN(){
+    let url = URL_SERVCIOS + '/login/renuevatoken?token='+this.token;
+    return this.http.get(url).pipe(map((resp: any) => {
+      this.token = resp.token;
+      localStorage.setItem('token', this.token);
+      return true;
+    }),catchError(error => {
+      console.log(error);
+      this.router.navigate(['/login']);
+      swal('Error', 'Imposible renovar token', 'error');
+      return throwError(error);
+    }));
+  }
+
   estaLogueado() {
     return (this.token.length) ? true : false;
   }
@@ -59,7 +73,7 @@ export class UsuarioService {
       return resp.usuario;
     }),catchError(error => {
       console.log(error);
-      swal('Errorrrrr', error.error.mensaje, 'error');
+      swal('Error', error.error.mensaje, 'error');
       return throwError(error);
     }));
   }

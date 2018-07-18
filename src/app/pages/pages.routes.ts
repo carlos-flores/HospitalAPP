@@ -6,7 +6,7 @@ import { PagesComponent } from './pages.component';
 import { AcountSettingComponent } from './acount-setting/acount-setting.component';
 import { PromesasComponent } from './promesas/promesas.component'
 import { RxjsComponent } from './rxjs/rxjs.component'
-import { LoginGuardGuard, AdminGuard } from '../services/service.index';
+import { LoginGuardGuard, AdminGuard, VerificaTokenGuard } from '../services/service.index';
 import { PerfilComponent } from './perfil/perfil.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { MedicosComponent } from './medicos/medicos.component';
@@ -16,12 +16,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 const pagesRoutes: Routes = [
-    {
-        path: '',
-        component: PagesComponent,
-        canActivate: [LoginGuardGuard],
-        children: [
-            { path: 'dashboard', component: DashboardComponent, data: { titulo: 'DashBoard', description: 'Pagina que muestra el dashborad de la aplicación ' } },
+            { path: 'dashboard', component: DashboardComponent, canActivate:[VerificaTokenGuard], data: { titulo: 'DashBoard', description: 'Pagina que muestra el dashborad de la aplicación ' } },
             { path: 'perfil', component: PerfilComponent, data: { titulo: 'Perfil del Usuario', description: 'Pagina que muestra el perfíl del usuario' } },
             { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Buscador', description: 'Muestra el resultado de una busqueda general' } },
             { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress', description: 'Pagina que muestra el progreso' } },
@@ -34,7 +29,5 @@ const pagesRoutes: Routes = [
             { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Mantenimiento de Médico', description: 'Página que permites gestionar un médico' } },
             { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Mantenimiento de Hospitales', description: 'Página que permite gestionar a los hospitales' } },
             { path: '', pathMatch: 'full', redirectTo: '/dashboard' }
-        ]
-    }
 ];
 export const PAGES_ROUTES = RouterModule.forChild(pagesRoutes);

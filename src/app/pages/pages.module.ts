@@ -5,7 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
-import { PagesComponent } from './pages.component';
+//import { PagesComponent } from './pages.component';
 import { PAGES_ROUTES } from './pages.routes';
 import { IncrementadorComponent } from '../reutilizables/incrementador/incrementador.component';
 import { GraficaDonaComponent } from '../reutilizables/grafica-dona/grafica-dona.component';
@@ -16,7 +16,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { PerfilComponent } from './perfil/perfil.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { ModalUploadComponent } from './modal-upload/modal-upload.component';
+//import { ModalUploadComponent } from './modal-upload/modal-upload.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
@@ -24,7 +24,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 
 @NgModule({
     declarations: [
-        PagesComponent,
+        //PagesComponent,
         DashboardComponent,
         ProgressComponent,
         Graficas1Component,
@@ -35,14 +35,14 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
         RxjsComponent,
         PerfilComponent,
         UsuariosComponent,
-        ModalUploadComponent,
+//        ModalUploadComponent,
         MedicosComponent,
         HospitalesComponent,
         MedicoComponent,
         BusquedaComponent
       ],
       exports: [
-        PagesComponent,
+//        PagesComponent,
         DashboardComponent,
         ProgressComponent,
         Graficas1Component
